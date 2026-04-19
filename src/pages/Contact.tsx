@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Send, Phone, Mail, MapPin, Check, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -134,7 +134,7 @@ export function Contact() {
     { icon: MapPin, label: 'Address', value: '123 Luxury Ave, Miami, FL 33139' },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -145,7 +145,7 @@ export function Contact() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,

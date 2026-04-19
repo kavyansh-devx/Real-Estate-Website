@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Mail, Phone, ArrowUpRight, User } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -161,7 +161,7 @@ function ConsultantCard({ consultant }: ConsultantCardProps) {
 }
 
 export function Consultants() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -172,7 +172,7 @@ export function Consultants() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
     show: {
       opacity: 1,

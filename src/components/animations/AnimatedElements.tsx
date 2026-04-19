@@ -216,7 +216,6 @@ export function PulseGlow({ children, delay = 0, className = '' }: PulseGlowProp
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ delay, duration: 0.6 }}
       className={className}
       animate={{
         boxShadow: [
@@ -226,9 +225,12 @@ export function PulseGlow({ children, delay = 0, className = '' }: PulseGlowProp
         ],
       }}
       transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: 'easeInOut',
+        opacity: { delay, duration: 0.6 },
+        boxShadow: {
+          duration: 3,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
       }}
     >
       {children}
