@@ -63,7 +63,12 @@ export function PropertyCard({ property, index = 0 }: { property: Property; inde
 
         {/* Wishlist Button — glass */}
         <button
-          onClick={() => toggleWishlist(property.id)}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            toggleWishlist(property.id);
+          }}
+          aria-label={isWished ? `Remove ${property.title} from collection` : `Save ${property.title} to collection`}
           className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/30 backdrop-blur-xl text-white hover:bg-black/50 transition-all cursor-pointer border border-white/10"
         >
           <Heart className={cn("w-4 h-4 transition-colors", isWished ? "fill-gold text-gold" : "text-white/80")} />

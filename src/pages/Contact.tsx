@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Send, Phone, Mail, MapPin, Check, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -22,26 +22,6 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
-  // Reset form when component mounts
-  useEffect(() => {
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
-    setErrors({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
-    setSubmitted(false);
-    setIsSubmitting(false);
-  }, []);
-
   // Validation functions
   const validateName = (name: string): boolean => {
     const nameRegex = /^[a-zA-Z\s]{2,50}$/;
@@ -55,7 +35,7 @@ export function Contact() {
 
   const validatePhone = (phone: string): boolean => {
     // Remove common phone formatting characters
-    const cleanPhone = phone.replace(/[\s\-\(\)\.]/g, '');
+    const cleanPhone = phone.replace(/[\s().-]/g, '');
     // Check if it's a valid phone number (10-15 digits)
     const phoneRegex = /^\d{10,15}$/;
     return phoneRegex.test(cleanPhone) || phone.trim() === '';

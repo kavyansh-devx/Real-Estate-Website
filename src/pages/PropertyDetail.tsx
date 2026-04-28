@@ -214,13 +214,19 @@ export function PropertyDetail() {
             <span className="text-gradient-gold">starts here.</span>
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <button className="group bg-gold/90 backdrop-blur-md hover:bg-gold text-black px-10 py-4 rounded-full font-bold text-sm tracking-tight transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_40px_rgba(201,168,76,0.25)]">
+            <Link
+              to="/contact"
+              className="group bg-gold/90 backdrop-blur-md hover:bg-gold text-black px-10 py-4 rounded-full font-bold text-sm tracking-tight transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_40px_rgba(201,168,76,0.25)]"
+            >
               Book a Private Tour
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="bg-white/[0.06] hover:bg-white/[0.12] backdrop-blur-xl border border-white/[0.12] text-white px-10 py-4 rounded-full font-bold text-sm tracking-tight transition-all cursor-pointer">
+            </Link>
+            <Link
+              to="/consultants"
+              className="bg-white/[0.06] hover:bg-white/[0.12] backdrop-blur-xl border border-white/[0.12] text-white px-10 py-4 rounded-full font-bold text-sm tracking-tight transition-all cursor-pointer"
+            >
               Contact Concierge
-            </button>
+            </Link>
           </div>
         </motion.div>
       </section>

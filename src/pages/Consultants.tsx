@@ -23,7 +23,7 @@ const consultants: Consultant[] = [
     bio: 'With 15+ years of experience in ultra-luxury properties, Victoria specializes in exclusive villa sales and estate management.',
     email: 'victoria@estatex.com',
     phone: '+1 (555) 123-4567',
-    image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const consultants: Consultant[] = [
     bio: 'James is renowned for his expertise in premium penthouse sales across major metropolitan areas worldwide.',
     email: 'james@estatex.com',
     phone: '+1 (555) 234-5678',
-    image: 'https://images.pexels.com/photos/3807518/pexels-photo-3807518.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const consultants: Consultant[] = [
     bio: 'Sophia connects discerning clients with exceptional properties across Europe, Asia, and the Americas.',
     email: 'sophia@estatex.com',
     phone: '+1 (555) 345-6789',
-    image: 'https://images.pexels.com/photos/3807519/pexels-photo-3807519.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const consultants: Consultant[] = [
     bio: 'With an MBA from Harvard, Alexander guides high-net-worth individuals through strategic property investments.',
     email: 'alex@estatex.com',
     phone: '+1 (555) 456-7890',
-    image: 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ const consultants: Consultant[] = [
     bio: 'Isabella curates bespoke property experiences, ensuring every detail matches her clients\' sophisticated lifestyle.',
     email: 'isabella@estatex.com',
     phone: '+1 (555) 567-8901',
-    image: 'https://images.pexels.com/photos/3807520/pexels-photo-3807520.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const consultants: Consultant[] = [
     bio: 'Michael specializes in confidential, off-market transactions for the world\'s most exclusive properties.',
     email: 'michael@estatex.com',
     phone: '+1 (555) 678-9012',
-    image: 'https://images.pexels.com/photos/3807521/pexels-photo-3807521.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&dpr=2',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -146,14 +146,15 @@ function ConsultantCard({ consultant }: ConsultantCardProps) {
           </div>
 
           {/* CTA Button */}
-          <motion.button
+          <motion.a
+            href={`mailto:${consultant.email}?subject=${encodeURIComponent(`Schedule a consultation with ${consultant.name}`)}`}
             whileHover={{ scale: 1.05, backgroundColor: 'rgba(201, 168, 76, 0.15)' }}
             whileTap={{ scale: 0.95 }}
             className="w-full py-3 rounded-lg bg-gold/10 border border-gold/30 text-gold font-semibold text-sm transition-all hover:shadow-[0_0_20px_rgba(201,168,76,0.2)] flex items-center justify-center gap-2 group/btn"
           >
             Schedule Call
             <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.div>
@@ -302,7 +303,7 @@ export function Consultants() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/consultants"
+                to="/contact"
                 className="px-10 py-4 bg-gold/90 hover:bg-gold text-black rounded-full font-bold text-sm tracking-tight transition-all shadow-[0_0_30px_rgba(201,168,76,0.2)]"
               >
                 <motion.div
@@ -314,7 +315,7 @@ export function Consultants() {
                 </motion.div>
               </Link>
               <Link
-                to="/property/1"
+                to="/"
                 className="px-10 py-4 bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.12] text-white rounded-full font-bold text-sm tracking-tight transition-all"
               >
                 <motion.div
